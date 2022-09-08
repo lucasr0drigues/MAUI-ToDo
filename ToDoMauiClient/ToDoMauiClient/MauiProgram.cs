@@ -16,9 +16,10 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		builder.Services.AddSingleton<IRestDataService, RestDataService>();
+		//builder.Services.AddSingleton<IRestDataService, RestDataService>();
+		builder.Services.AddHttpClient<IRestDataService, RestDataService>();
 
-		builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddTransient<ManageToDoPage>();
 
 		return builder.Build();

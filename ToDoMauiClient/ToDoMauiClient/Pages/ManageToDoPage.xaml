@@ -12,9 +12,9 @@
                 </TableSection>
             </TableRoot>
         </TableView>
-        <Button Text="Save" Grid.Row="1" Grid.Column="0" Clicked="OnSaveButtonClicked"/>
-        <Button Text="Delete" Grid.Row="1" Grid.Column="1" Clicked="OnDeleteButtonClicked"/>
-        <Button Text="Cancel" Grid.Row="1" Grid.Column="2" Clicked="OnCancelButtonClicked"/>
+        <Button Text="Save" CornerRadius="16" Grid.Row="1" Grid.Column="0" Clicked="OnSaveButtonClicked"/>
+        <Button Text="Delete" CornerRadius="16" Grid.Row="1" Grid.Column="1" Clicked="OnDeleteButtonClicked"/>
+        <Button Text="Cancel" CornerRadius="16" Grid.Row="1" Grid.Column="2" Clicked="OnCancelButtonClicked"/>
     </Grid>
     
     
