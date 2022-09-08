@@ -10,7 +10,8 @@ namespace ToDoMauiClient.Models
     public class ToDo : INotifyPropertyChanged
     {
         int _id;
-        public int Id { 
+        public int Id
+        {
             get => _id;
             set
             {
@@ -22,8 +23,11 @@ namespace ToDoMauiClient.Models
             }
         }
 
+
         string _todoname;
-        public string ToDoName {
+
+        public string ToDoName
+        {
             get => _todoname;
             set
             {
@@ -31,9 +35,10 @@ namespace ToDoMauiClient.Models
                     return;
 
                 _todoname = value;
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(ToDoName)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ToDoName)));
             }
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
