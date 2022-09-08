@@ -65,7 +65,7 @@ namespace ToDoMauiClient.DataServices
 
             try
             {
-                HttpResponseMessage response = await _httpClient.DeleteAsync($"{_url}/todo{id}");
+                HttpResponseMessage response = await _httpClient.DeleteAsync($"{_url}/todo/{id}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -130,7 +130,7 @@ namespace ToDoMauiClient.DataServices
                 string jsonToDo = JsonSerializer.Serialize<ToDo>(toDo, _jsonSerializerOptions);
                 StringContent content = new StringContent(jsonToDo, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await _httpClient.PutAsync($"{_url}/todo{toDo.Id}", content);
+                HttpResponseMessage response = await _httpClient.PutAsync($"{_url}/todo/{toDo.Id}", content);
 
                 if (response.IsSuccessStatusCode)
                 {
