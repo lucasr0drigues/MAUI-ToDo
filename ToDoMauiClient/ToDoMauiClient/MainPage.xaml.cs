@@ -1,4 +1,6 @@
 ﻿using ToDoMauiClient.DataServices;
+using ToDoMauiClient.Models;
+using ToDoMauiClient.Pages;
 
 namespace ToDoMauiClient;
 
@@ -24,11 +26,25 @@ public partial class MainPage : ContentPage
 	async void OnAddToDoClicked(object sender, EventArgs e)
 	{
 		Console.WriteLine("---> Add button clicked");
+
+		var navigationParameter = new Dictionary<string, object>
+		{
+			{ nameof(ToDo), new ToDo() }
+		};
+
+		await Shell.Current.GoToAsync(nameof(ManageToDoPage), navigationParameter);
 	}
 
 	async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
         Console.WriteLine("---> Item changed clicked");
+
+        var navigationParameter = new Dictionary<string, object>
+        {
+            { nameof(ToDo), e.CurrentSelection.FirstOrDefault() as ToDo }
+        };
+
+        await Shell.Current.GoToAsync(nameof(ManageToDoPage), navigationParameter);
     }
 }
 
